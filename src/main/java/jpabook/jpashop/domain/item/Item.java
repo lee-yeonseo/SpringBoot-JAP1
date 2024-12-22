@@ -1,4 +1,4 @@
-package jpabook.jpashop.domain;
+package jpabook.jpashop.domain.item;
 
 import jpabook.jpashop.domain.Category;
 import jakarta.persistence.*;
@@ -42,6 +42,6 @@ public abstract class Item {
         if (restStock < 0) {
             throw new NotEnoughStockException("need more stock");
         }
-        this.stockQuantity -= restStock;
+        this.stockQuantity = restStock;
     }
 }
